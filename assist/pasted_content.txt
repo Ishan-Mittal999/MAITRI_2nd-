@@ -1,0 +1,65 @@
+Build a production-ready web application called "MAITRI Web Assistant."
+Purpose: A browser-based AI tool that monitors astronauts’ emotional and mental well-being using their webcam and microphone, providing real-time feedback and supportive interactions.
+
+Core Features:
+WebRTC Capture:
+Use WebRTC to securely capture short (5–10 second) video and audio snippets from the user’s webcam and microphone.
+Show a small real-time face preview on the screen.
+
+Frontend Processing:
+Preprocess video locally for face detection (e.g., bounding box overlay).
+Extract audio features like mel-spectrograms before sending data to backend.
+
+Backend API (Flask or FastAPI):
+Accept preprocessed video and audio data from the frontend.
+Run AI models (PyTorch/ONNX) to detect emotions: happy, sad, neutral, stressed, fatigued.
+Return a JSON response with {emotion_label, wellbeing_score (0–100), timestamp}.
+
+Result Dashboard (Frontend):
+Display an emoji corresponding to the detected emotion.
+Show the wellbeing score with a progress bar or circular indicator.
+Display emotion label in text below the video preview.
+
+Adaptive Conversation:
+Show supportive messages in a chatbot-style UI (e.g., “Try 3 deep breaths,” “Take a short break”).
+Play these messages with Web Speech API (text-to-speech) in the browser.
+
+Alerts & Logs:
+Store anonymized wellbeing logs (emotion + score + timestamp) in a lightweight database (SQLite or JSON file).
+Trigger an on-screen alert when critical emotions (high stress/fatigue) are detected.
+Provide a “Send Alert” button to notify ground support (simulate with console log or simple POST endpoint).
+
+UI/UX:
+Build a clean, responsive interface with React.js + TailwindCSS.
+
+Include a dashboard layout with:
+Left: real-time webcam preview
+Right: emotion indicator, wellbeing score, and chatbot feed
+Use soft rounded corners, minimalistic color palette, smooth animations (Framer Motion).
+
+Security & Privacy:
+No permanent storage of raw video/audio.
+Only anonymized summaries are stored.
+Include clear “Recording Active” indicator for user transparency.
+
+Offline-First Design:
+Make it deployable locally (no internet required) — e.g., via Docker container or simple local server.
+
+Tech Stack:
+
+Frontend: React.js, TailwindCSS, WebRTC, Web Speech API
+Backend: Node.js (JavaScript/TypeScript) or FastAPI, PyTorch/ONNX
+Database: SQLite (or JSON logs for simplicity)
+
+Deliverables:
+
+A single-page React app with the described layout.
+API endpoints (/analyze for AI inference, /logs for fetching history).
+Placeholder AI model logic (mock response if no real model available).
+Basic deployment instructions (local run + Docker option).
+
+and i want to add some more feature like after the monitoring our ai support tell the astonots who to get fell or to overcome the stress or whatever they have 
+
+an addition feature is in a emergence condition like they fell very unhealth or anything they can able to send the emergence signal to the ground within only one click
+
+and make the UI/UX or the frontend part very attractive
